@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").style.display = "none";
+
+      const element = document.getElementById("nonExistentElement");
+      if (element) {
+        element.style.display = "block";
+      } else {
+        console.log("Element 'nonExistentElement' not found.");
+        // Handle the case where the element doesn't exist
+      }
+    }
+  </script>
+</body>
+</html>
